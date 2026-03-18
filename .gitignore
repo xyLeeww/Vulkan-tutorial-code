@@ -1,0 +1,46 @@
+# --- 构建输出 ---
+build/
+out/
+bin/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.exp
+# MSVC 中间文件（保留 model/ 下的 .obj 模型）
+*.obj
+!model/**/*.obj
+*.o
+*.a
+# 若项目里要提交第三方 .lib，在下面加一行：!third_party/**/*.lib
+*.lib
+
+# --- Visual Studio ---
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.VC.db
+*.VC.VC.opendb
+ipch/
+
+# --- 已编译着色器（若本地生成）---
+*.spv
+
+# --- 编辑器 / 工具本地数据 ---
+.cline_storage/
+*.swp
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- 可选：若不想把 VS Code 配置上传，取消下面两行注释 ---
+.vscode/
