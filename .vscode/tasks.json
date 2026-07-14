@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Shaders",
+            "type": "shell",
+            "command": "& 'C:/VulkanSDK/1.4.341.1/Bin/glslangValidator.exe' -V ${workspaceFolder}/shaders/shader.vert -o ${workspaceFolder}/shaders/vert.spv; & 'C:/VulkanSDK/1.4.341.1/Bin/glslangValidator.exe' -V ${workspaceFolder}/shaders/shader.frag -o ${workspaceFolder}/shaders/frag.spv",
+            "problemMatcher": [],
+            "detail": "Compile GLSL shaders to SPIR-V"
+        },
+        {
+            "label": "Build Vulkan-tutorial-code (g++)",
+            "type": "shell",
+            "command": "g++",
+            "dependsOn": "Compile Shaders",
+            "args": [
+                "-std=c++20",
+                "-g",
+                "-o",
+                "${workspaceFolder}/build/main.exe",
+                "${workspaceFolder}/src/main.cpp",
+                "-I${workspaceFolder}/include",
+                "-IC:/VulkanSDK/1.4.341.1/Include",
+                "-LC:/VulkanSDK/1.4.341.1/Lib",
+                "-lglfw3",
+                "-lvulkan-1",
+                "-lgdi32",
+                "-luser32",
+                "-lshell32"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "C++20 build with MSYS2 UCRT64 g++, linking GLFW3 and Vulkan"
+        }
+    ]
+}

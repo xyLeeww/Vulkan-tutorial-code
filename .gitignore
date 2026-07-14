@@ -41,6 +41,3 @@ ipch/
 .DS_Store
 Thumbs.db
 desktop.ini
-
-# --- 可选：若不想把 VS Code 配置上传，取消下面两行注释 ---
-.vscode/
